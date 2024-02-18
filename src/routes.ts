@@ -2,7 +2,7 @@ import {UserController} from "./controller/UserController";
 
 export const Routes = [{
     method: "get",
-    route: "/users",
+    route: "/posts",
     controller: UserController,
     action: "all"
 }, {
