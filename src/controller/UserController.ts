@@ -2,6 +2,7 @@ import {getRepository} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {Article} from "../entity/Article";
 
+
 export class UserController {
 
     private userRepository = getRepository(Article);

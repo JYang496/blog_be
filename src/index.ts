@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
+import cors from "cors";
 import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
@@ -10,6 +11,7 @@ createConnection().then(async connection => {
 
     // create express app
     const app = express();
+    app.use(cors());
     app.use(bodyParser.json());
 
     // register express routes from defined application routes
@@ -29,7 +31,7 @@ createConnection().then(async connection => {
     // ...
 
     // start express server
-    app.listen(3000);
+    app.listen(3800);
 
     // insert new users for test
     await connection.manager.save(connection.manager.create(Article, {
@@ -41,6 +43,6 @@ createConnection().then(async connection => {
         content:"<p>content<p>"
     }));
 
-    console.log("Express server has started on port 3000. Open http://localhost:3000/posts to see results");
+    console.log("Express server has started on port 3800. Open http://localhost:3800/posts to see results");
 
 }).catch(error => console.log(error));
