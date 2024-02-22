@@ -45,6 +45,6 @@ createConnection().then(async connection => {
     //     content:"<p>content<p>"
     // }));
 
-    console.log("Express server has started on port 3800. Open http://localhost:3800/posts to see results");
+    console.log("Express server has started on port 3800. Open http://localhost:3800/articles to see results");
 
 }).catch(error => console.log(error));
